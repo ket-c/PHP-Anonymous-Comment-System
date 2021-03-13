@@ -8,7 +8,7 @@ $("#anonymousLogin").submit(function (e) {
    $.ajax({
         type:"POST",
         url: 'controller/login.php',     //
-        data: $(this).serialize(),              
+        data: $(this).serialize(),
         success: function(data){
          // $('#anonymousProcess').html(data);
           if (data=='yes') {
@@ -22,7 +22,7 @@ $("#anonymousLogin").submit(function (e) {
           $('#anonymousProcess').html(ajaxOptions+'! Failed. Try again. Message: '+thrownError);
          }
     });
-   
+
 });
 
 // Register
@@ -33,7 +33,7 @@ $("#anonymousRegister").submit(function (e) {
    $.ajax({
         type:"POST",
         url: 'controller/register.php',     //
-        data: $(this).serialize(),              
+        data: $(this).serialize(),
         success: function(data){
 
          // $('#anonymousProcess').html(data);
@@ -49,7 +49,7 @@ $("#anonymousRegister").submit(function (e) {
           $('#anonymousProcess').html(ajaxOptions+'! Registration failed. Try again. Message: '+thrownError);
          }
     });
-   
+
 });
 
 // New Message
@@ -60,7 +60,7 @@ $("#anonymousNewMessage").submit(function (e) {
    $.ajax({
         type:"POST",
         url: 'controller/save_comments.php',     //
-        data: $(this).serialize(),              
+        data: $(this).serialize(),
         success: function(data){
          // $('#anonymousProcess').html(data);
           if (data=='comments successfully saved') {
@@ -74,7 +74,7 @@ $("#anonymousNewMessage").submit(function (e) {
           $('#anonymousProcess').html(ajaxOptions+'! failed. Try again. Message: '+thrownError);
          }
     });
-   
+
 
 });
 
@@ -103,7 +103,7 @@ $("#anonymousPassword").submit(function (e) {
    $.ajax({
         type:"POST",
         url: 'controller/change_password.php',     //
-        data: $(this).serialize(),              
+        data: $(this).serialize(),
         success: function(data){
 
          // $('#anonymousProcess').html(data);
@@ -119,7 +119,7 @@ $("#anonymousPassword").submit(function (e) {
           $('#anonymousProcess').html(ajaxOptions+'! Failed. Try again. Message: '+thrownError);
          }
     });
-   
+
 });
 
 
@@ -148,7 +148,7 @@ var anonymousURL = function anonymousURL(sParam) {
 
 // fetch Login details
            function fetchLoginDetails() {
-           
+
              $.ajax({
               url: 'controller/fetch_login.php',
 
@@ -158,21 +158,21 @@ var anonymousURL = function anonymousURL(sParam) {
           data=JSON.parse(data);
           $.each(data, function(i, fetchAll){
             var fetchData= data[i];
-           
+
         $('#displayUsername').html(fetchData.nickname);
-        $('#displayEmail').html(fetchData.email); 
+        $('#displayEmail').html(fetchData.email);
         var newURL = 'https://anon.hwcalc.ga/new.html?user='+fetchData.nickname+'&i='+fetchData.id;
-        $('#displayURL').val(newURL); 
+        $('#displayURL').val(newURL);
 
         //socialmedia sharing
-         $('#whatsapp').attr("href", 'whatsapp://send?text='+newURL+encodeURI(' Click and Send any message to me and i will not know it was you')); 
-          $('#twitter').attr("href", 'https://twitter.com/share?url='+newURL); 
-          $('#facebook').attr("href", 'https://www.facebook.com/sharer/sharer.php?='+newURL+'&text ='+encodeURI(' Click and Send any message to me and i will not know it was you'));  
+         $('#whatsapp').attr("href", 'whatsapp://send?text='+newURL+encodeURI(' Click and Send any message to me and i will not know it was you'));
+          $('#twitter').attr("href", 'https://twitter.com/share?url='+newURL);
+          $('#facebook').attr("href", 'https://www.facebook.com/sharer/sharer.php?='+newURL+'&text ='+encodeURI(' Click and Send any message to me and i will not know it was you'));
           });
           //console.log(data);
-          
+
         //$('#displayURL').html(data.url);
-        
+
              }
 
            });
@@ -192,9 +192,9 @@ var anonymousURL = function anonymousURL(sParam) {
          if (data=='please login') {
           window.location='./';
           console.log(data);
-         } 
+         }
          else{
-          
+
           var $fetch ='';
           var component ='';
 
@@ -212,11 +212,11 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
   $fetch += '<div class="row"> <div class="pull-left alert col-md-2"><img src="assets/img/anon.jpg" style=" width: 50px; height: 50px;  border-radius:50%; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); border: 5px solid #2c2c2c;"></div><div class="alert col-md-7" style="margin-left:0px; color:#2c2c2c;">' +fetchData.description
          +'</div> <div class="col-md-3 alert pull-right"><span style="color: black;" class="fa fa-clock"></span><br><text style="color: black; font-size:10px;"> ';
          $fetch+=fetchData.date_created+'</text></div></div>';
-         
+
         });
-            
+
           } else {
-            
+
             $fetch +='<div class="alert alert-danger">No anonymous messages received yet.</div>';
           console.log(fetch);
           $('#displayMessages').html($fetch)
@@ -229,7 +229,7 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
            });
 
-} 
+}
 
 //copy
 function myCopy() {
@@ -245,4 +245,3 @@ function myCopy() {
   /* Alert the copied text */
   alert("Copied");
       }
-

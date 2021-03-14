@@ -26,7 +26,7 @@ class Comments
     //  fetching comments from the database
     public function FETCH_COMMENTS ($user_id){
         global $pdoConn;
-        $sqlQ = 'SELECT * FROM anonymous_commets WHERE user_id =?';
+        $sqlQ = 'SELECT * FROM anonymous_comments WHERE user_id =? ORDER BY id DESC';
         if (!$bindP= $pdoConn->prepare($sqlQ)) {
            echo 'boom. query did not work';
         }
@@ -40,6 +40,6 @@ class Comments
                 echo 'error. comments not saved';
             }
         }
-        
+
     }
 }

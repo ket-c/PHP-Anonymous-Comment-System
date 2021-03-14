@@ -161,13 +161,14 @@ var anonymousURL = function anonymousURL(sParam) {
 
         $('#displayUsername').html(fetchData.nickname);
         $('#displayEmail').html(fetchData.email);
-        var newURL = 'https://anon.hwcalc.ga/new.html?user='+fetchData.nickname+'&i='+fetchData.id;
+        var newURL = 'https://anon.hwcalc.ga/new.html?user='+fetchData.nickname+'&ref='+fetchData.id;
+        var newURLTwo = 'https://anon.hwcalc.ga/new.html?user='+fetchData.nickname+'%26ref='+fetchData.id;
         $('#displayURL').val(newURL);
 
         //socialmedia sharing
-         $('#whatsapp').attr("href", 'whatsapp://send?text='+newURL+encodeURI(' Click and Send any message to me and i will not know it was you'));
-          $('#twitter').attr("href", 'https://twitter.com/share?url='+newURL);
-          $('#facebook').attr("href", 'https://www.facebook.com/sharer/sharer.php?='+newURL+'&text ='+encodeURI(' Click and Send any message to me and i will not know it was you'));
+         $('#whatsapp').attr("href", 'whatsapp://send?text='+encodeURI('Click and Send any message to me and i will not know it was you ')+newURLTwo);
+          $('#twitter').attr("href", 'https://twitter.com/share?url='+encodeURI('Click and Send any message to me and i will not know it was you ')+newURLTwo);
+          $('#facebook').attr("href", 'https://www.facebook.com/sharer/sharer.php?=&text ='+encodeURI('Click and Send any message to me and i will not know it was you')+newURLTwo);
           });
           //console.log(data);
 

@@ -29,7 +29,7 @@
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title class="userNickname"> Send Anonymous Messages - by PHPGrammers
-  
+
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -44,25 +44,25 @@
 <style type="text/css">
   .btn-white:hover{
     background-color: pink;
-    
+
     color: white;
-    
+
   }
- 
+
 </style>
 <body class="index-page sidebar-collapse">
-  
+
   <div class="wrapper">
-  
+
     <div class="main">
-    
-      
+
+
       <div class="section section-navbars">
-        
+
         <div id="navbar">
           <div class="navigation-example" >
-  
-      <div class="section section-signup" style="background-color:  
+
+      <div class="section section-signup" style="background-color:
         white  ; background-size: cover; background-position: top center; min-height: 700px;">
         <div style="width: 100%; text-align: center; margin-top: -125px;">
           <h3 style="margin-bottom: 0pt;"><strong class="userNickname"></strong> </h3>
@@ -70,30 +70,30 @@
         </div>
         <div class="container">
           <div class="row">
-            
+
           <div class="card card-signup" style="max-width:600px" >
                 <div class="card-header" style="max-width:600px">
                   <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="black" style="max-width:600px">
-                    
+
                     <li class="nav-item">
                       <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-selected="false">New Message</a>
                     </li>
-                    
+
                   </ul>
                 </div>
                 <div class="card-body">
                   <!-- Tab panes -->
                   <div class="tab-content text-center">
-                    
+
                     <div class="tab-pane active" id="profile" role="tabpanel">
                        <form id="anonymousNewMessage" class="form" method="POST" action="">
                 <div class="card-header text-center">
-                  
+
                   <h5 class="card-title title-up">Create Anonymous message/ comments :)</h5>
-                  
+
                 </div>
                 <div class="card-body">
-                  
+
                   <input type="hidden" name="user_id" id="userNickname" value="1">
                   <div class="input-group no-border">
                     <div class="input-group-prepend">
@@ -103,8 +103,8 @@
                     </div>
                     <textarea required placeholder="Type Anonymous Message here" name="description" class="form-control"></textarea>
                   </div>
-                 
-                  
+
+
                 </div>
                 <div id="anonymousProcess" hidden="" class="text-center"></div>
                 <div class="card-footer text-center">
@@ -112,14 +112,14 @@
                 </div>
               </form>
                     </div>
-                   
-                   
+
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        
+
         <div class="col text-center" style="">
             <a href="register.html" class="btn btn-outline-default btn-round btn-white btn-lg"><b style="color:black;"> Click Here To Receive Anonymous Messages</b></a>
           </div>
@@ -128,7 +128,7 @@
 
     <!-- <footer class="footer" data-background-color="black">
       <div class=" container ">
-     
+
         <div class="copyright" id="copyright">
           &copy;
           <script>
@@ -157,13 +157,13 @@
     $(document).ready(function() {
 
   var url =anonymousURL('user');
-  var url2 =anonymousURL('i');
+  var url2 =anonymousURL('ref');
   console.log(url);
      $('.userNickname').html('Send Anonymous Message to '+url);
-     $('#userNickname').val(url2);
+     $('#userNickname').val(url);
    });
 
-  
+
   </script>
 </body>
 

@@ -154,8 +154,8 @@ var anonymousURL = function anonymousURL(sParam) {
 
               //success
                success: function(data){
-
           data=JSON.parse(data);
+          //console.log(data);
           $.each(data, function(i, fetchAll){
             var fetchData= data[i];
 

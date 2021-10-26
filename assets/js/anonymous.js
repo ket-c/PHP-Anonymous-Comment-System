@@ -154,8 +154,8 @@ var anonymousURL = function anonymousURL(sParam) {
 
               //success
                success: function(data){
+
           data=JSON.parse(data);
-          //console.log(data);
           $.each(data, function(i, fetchAll){
             var fetchData= data[i];
 
@@ -209,9 +209,9 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
            $.each(data, function(i, fetchAll){
             var fetchData= data[i];
-
-  $fetch += '<div class="row"> <div class="pull-left alert col-md-2"><img src="assets/img/anon.jpg" style=" width: 50px; height: 50px;  border-radius:50%; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); border: 5px solid #2c2c2c;"></div><div class="alert col-md-7" style="margin-left:0px; color:#2c2c2c;">' +fetchData.description
-         +'</div> <div class="col-md-3 alert pull-right"><span style="color: black;" class="fa fa-clock"></span><br><text style="color: black; font-size:10px;"> ';
+            let message_title = fetchData.message_title ?? ""
+  $fetch += '<div class="row m-0"> <div class="pull-left alert col-md-2 mb-0"><img src="assets/img/anon.jpg" style=" width: 50px; height: 50px;  border-radius:50%; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); border: 5px solid #2c2c2c;" class="m-0"></div> <div class="alert col-md-7 m-0" style="margin-left:0px; color:#2c2c2c;"> <b>'  +message_title +'</b><br>'  +fetchData.description
+         +'</div> <div class="col-md-3 alert pull-right m-0"><span style="color: black;" class="fa fa-clock m-0"></span><br><text style="color: black; font-size:10px;"> ';
          $fetch+=fetchData.date_created+'</text></div></div>';
 
         });

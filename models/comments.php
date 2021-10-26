@@ -2,10 +2,10 @@
 class Comments
 {
     //  saving comments into the database
-    public function INSERT_COMMENTS($user_id, $description){
+    public function INSERT_COMMENTS($user_id, $description, $message_title){
         global $pdoConn;
         $date_created = date ('Y-m-d H:i:s');
-        $sqlQ = 'INSERT INTO anonymous_comments (user_id, description, date_created) VALUE(?,?,?)';
+        $sqlQ = 'INSERT INTO anonymous_comments (user_id, description, date_created, message_title) VALUE(?,?,?,?)';
         if (!$bindP= $pdoConn->prepare($sqlQ)) {
            echo 'boom. query did not work';
         }
@@ -13,6 +13,7 @@ class Comments
             $bindP -> bindParam(1, $user_id);
             $bindP -> bindParam(2, $description);
             $bindP -> bindParam(3, $date_created);
+            $bindP -> bindParam(4, $message_title);
             if ($bindP->execute()) {
                 echo 'comments successfully saved';
             }
